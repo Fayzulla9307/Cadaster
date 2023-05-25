@@ -1,0 +1,16 @@
+[Unit]
+Description=Kadastr web application
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=www-data
+
+WorkingDirectory=/opt/kadastr/
+ExecStart=/usr/bin/python3 /opt/kadastr/run.py
+
+[Install]
+WantedBy=multi-user.target
